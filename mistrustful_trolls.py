@@ -143,10 +143,6 @@ def start():
                 graph.remove_node(i)
                 found = True
 
-    print("finished")
-
-count = 0
-
 
 def next_state(original_state, prev_state, prev_node, has_boat=True):
     if has_boat:
@@ -193,7 +189,6 @@ def next_odd_state(original_state, prev_state, prev_node, has_boat):
         new_land = Land(prev_state.contents.union(set(i)))
 
         found_duplicate = False
-        cur_node = prev_node
 
         for node in graph.nodes():
             if node.id().contents == new_land.contents and node.attribute("boat") and not node.attribute("empty"):
